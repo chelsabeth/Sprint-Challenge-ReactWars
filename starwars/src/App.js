@@ -10,14 +10,14 @@ const App = () => {
     axios
       .get(`https://swapi.co/api/people/`)
       .then(response => {
-        const charData = response.data.results;
-        console.log("Character Data", charData);
+        const charData = response.data.results; //charData is now set to the specific parts of the resonse from the API that I need
+        console.log("Character Data", charData); 
         setCharacter(charData);
       })
       .catch(error => {
         console.log("Welcome to the dark side, mwahaha!", error);
       });
-  }, []);
+  }, []); //Dependency array 
 
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
