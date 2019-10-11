@@ -6,7 +6,7 @@ import {Card, CardTitle, CardText, Col, CardBody, CardSubtitle} from "reactstrap
 const CharacterCard = props => {
     return (
         <Col xs="6">
-            <Card outline="warning">
+            <Card>
                 <CardBody>
                     <CardTitle tag="h4">{props.name}</CardTitle>
                     <CardSubtitle>Gender: {props.gender}</CardSubtitle>
