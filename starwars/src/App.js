@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+// import CharacterCard from "./components/CharacterCard";
 
 const App = () => {
   const [character, setCharacter] = useState([]);
@@ -9,9 +10,9 @@ const App = () => {
     axios
       .get(`https://swapi.co/api/people/`)
       .then(response => {
-        const data = response.data.results;
-        console.log("Character Data", data);
-        setCharacter(data);
+        const charData = response.data.results;
+        console.log("Character Data", charData);
+        setCharacter(charData);
       })
       .catch(error => {
         console.log("Welcome to the dark side, mwahaha!", error);
