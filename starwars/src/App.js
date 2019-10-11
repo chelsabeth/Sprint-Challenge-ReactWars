@@ -17,6 +17,7 @@ const App = () => {
         console.log("Welcome to the dark side, mwahaha!", error);
       });
   }, []);
+
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -24,9 +25,14 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      {character.map((character, index) => {
+        //Where my character card will go
+      })}
     </div>
   );
 };
