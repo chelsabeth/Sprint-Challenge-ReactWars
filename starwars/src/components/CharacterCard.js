@@ -9,10 +9,10 @@ const CharacterCard = props => {
             <Card outline="warning">
                 <CardBody>
                     <CardTitle tag="h4">{props.name}</CardTitle>
-                    <CardSubtitle>{props.gender}</CardSubtitle>
-                    <CardText>{props.hair_color}</CardText>
-                    <CardText>{props.eye_color}</CardText>
-                    <CardText>{props.height}</CardText>
+                    <CardSubtitle>Gender: {props.gender}</CardSubtitle>
+                    <CardText>Hair Color: {props.hair}</CardText>
+                    <CardText>Eye Color: {props.eyes}</CardText>
+                    <CardText>Height: {props.height}</CardText>
                 </CardBody>
             </Card>
         </Col>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-// import CharacterCard from "./components/CharacterCard";
+import CharacterCard from "./components/CharacterCard";
+import { Container, Row } from "reactstrap";
 
 const App = () => {
   const [character, setCharacter] = useState([]);
@@ -11,13 +12,13 @@ const App = () => {
       .get(`https://swapi.co/api/people/`)
       .then(response => {
         const charData = response.data.results; //charData is now set to the specific parts of the resonse from the API that I need
-        console.log("Character Data", charData); 
+        console.log("Character Data", charData);
         setCharacter(charData);
       })
       .catch(error => {
         console.log("Welcome to the dark side, mwahaha!", error);
       });
-  }, []); //Dependency array 
+  }, []); //Dependency array
 
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -26,14 +27,23 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-
-
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {character.map((character, index) => {
-        //Where my character card will go
-      })}
+      <Container>
+        <Row>
+          {character.map((character, index) => {
+            //Where my character card will go
+            return <CharacterCard key={index} 
+            name={character.name} 
+            gender={character.gender}
+            hair={character.hair_color}
+            eyes={character.eye_color}
+            height={character.height}
+            />;
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
